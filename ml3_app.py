@@ -496,7 +496,7 @@ st.header("Running Model with all features")
 if df_training is not None:
     try:          
 
-        # Train a Linear Regression model (you can replace with your best model)
+        # Train a  model (you can replace with your best model)
         rf_model = RandomForestRegressor(random_state=42,n_estimators= 100)
                     
         model_v1, cv_rmse, cv_r2, test_rmse, test_r2, errors_test_standard,y_pred_test  = evaluate_model(X_train_processed,
@@ -606,7 +606,7 @@ st.header("Running Model with Selected Features")
 
 if df_training is not None:
     try:
-        X_train_sel, X_test_sel, selected_features = select_features(X_train_processed,X_test_processed,importance_threshold=0.10, _model = model_v1)
+        X_train_sel, X_test_sel, selected_features = select_features(X_train_processed,X_test_processed,importance_threshold=0.10, _model = rf_model)
         model_v2, cv_rmse, cv_r2, test_rmse, test_r2, errors_test_standard,y_pred_test  = evaluate_model(X_train_sel,
                                                                                          y_train,
                                                                                          X_test_sel,
