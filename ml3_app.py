@@ -78,7 +78,7 @@ def select_features(X_train_processed, X_test_processed,
         X_train_processed (pd.DataFrame): Preprocessed training data.
         X_test_processed (pd.DataFrame): Preprocessed testing data.
         importance_threshold (float, optional): Threshold for feature importance.
-            Defaults to 0.015.
+            Defaults to 0.010.
         model: A trained model with a 'feature_importances_' attribute (e.g., RandomForestRegressor).
         prefix_to_drop (str, optional): Prefix of columns to drop.
             Defaults to 'unimportant_'. 
