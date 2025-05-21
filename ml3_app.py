@@ -135,7 +135,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, _model=None):
         y_test (pd.Series): Testing target variable.
         _model: A pre-initialized regression model.  Defaults to a RandomForestRegressor.
                If None, a RandomForestRegressor is initialized with
-               random_state=42 and n_estimators=200.
+               random_state=42 and n_estimators=100.
 
     Returns:
         dict: A dictionary containing the following evaluation metrics:
@@ -149,7 +149,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, _model=None):
     try:
         if _model is None:
             _model = RandomForestRegressor(random_state=42,
-                                          n_estimators=200)  # Default model
+                                          n_estimators=100)  # Default model
 
         # Model Training and Cross-validation
         cv = KFold(n_splits=5, shuffle=True,
@@ -497,7 +497,7 @@ if df_training is not None:
     try:          
 
         # Train a Linear Regression model (you can replace with your best model)
-        rf_model = RandomForestRegressor(random_state=42,n_estimators= 200)
+        rf_model = RandomForestRegressor(random_state=42,n_estimators= 100)
                     
         model_v1, cv_rmse, cv_r2, test_rmse, test_r2, errors_test_standard,y_pred_test  = evaluate_model(X_train_processed,
                                                                                          y_train,
